@@ -26,5 +26,3 @@ __meta__ = {
 
 [node name="Jogador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 154.48, 142.68 )
-vel_maximo = 200.0
-forca_pulo = 700
