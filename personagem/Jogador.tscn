@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://personagem/Jogador.gd" type="Script" id=1]
+[ext_resource path="res://personagem/Personagem.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 4 )
+
+[node name="Jogador" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+vel_maximo = 100.0
+rapidez = 10.0
+forca_pulo = 200
+
+[node name="AnimatedSprite" parent="." index="0"]
+animation = "Parado"
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+offset = Vector2( 0, -30 )
+current = true
+zoom = Vector2( 0.15, 0.15 )
+smoothing_enabled = true
+smoothing_speed = 30.0
+
+[node name="DelayAtirar" type="Timer" parent="." index="3"]
+wait_time = 0.1
+one_shot = true
