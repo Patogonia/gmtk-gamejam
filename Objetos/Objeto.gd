@@ -32,7 +32,7 @@ func _process(_delta) -> void:
 
 func _empurrar(posicao_empurrao: Vector2):
 	if (pode_mover):
-		self.apply_impulse(posicao_empurrao, Vector2(self.global_position - posicao_empurrao) * 20) #= self.global_position - posicao_empurrao
+		self.apply_impulse(Vector2(1,1), Vector2(self.global_position - posicao_empurrao) * 20) #= self.global_position - posicao_empurrao
 
 
 func _dano():

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objetos/Objeto.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 64 )
+
+[node name="Pedra_destrutivel" instance=ExtResource( 1 )]
+pode_destruir = true
+colide = true
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, 1.90735e-06 )
+scale = Vector2( 0.5, 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
