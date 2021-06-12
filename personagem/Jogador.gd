@@ -18,5 +18,5 @@ func processar_input_movimentacao() -> void:
 
 func processar_input_atirar() -> void:
 	if Input.is_action_pressed("atirar") and delay_atirar.is_stopped():
-		atirar(get_local_mouse_position().normalized())
+		atirar(get_local_mouse_position().normalized(), true)
 		delay_atirar.start()
