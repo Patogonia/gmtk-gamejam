@@ -21,6 +21,9 @@ shape = SubResource( 1 )
 [node name="BolaDeFogo" parent="." instance=ExtResource( 1 )]
 position = Vector2( 128, 64 )
 rotation = 0.785398
+collision/safe_margin = 0.08
 
 [node name="EmpurraoArcano" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, 128 )
+collision_mask = 0
+collision/safe_margin = 0.08

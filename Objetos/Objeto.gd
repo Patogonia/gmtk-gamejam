@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var empurrado: bool = false
+
 export var pode_mover: bool
 export var pode_destruir: bool
 export var colide: bool
@@ -19,22 +21,11 @@ func _ready():
 		self.set_collision_mask_bit(0, true)
 
 
-func _process(_delta) -> void:
-	if (Input.is_action_just_pressed("ui_left")):
-		_empurrar(self.global_position + Vector2(-10,0))
-	if (Input.is_action_just_pressed("ui_right")):
-		_empurrar(self.global_position + Vector2(10,0))
-	if (Input.is_action_just_pressed("ui_up")):
-		_empurrar(self.global_position + Vector2(0,-10))
-	if (Input.is_action_just_pressed("ui_down")):
-		_empurrar(self.global_position + Vector2(0,10))
-
-
-func _empurrar(posicao_empurrao: Vector2):
+func _empurrao(direcao_empurrao):
 	if (pode_mover):
-		self.apply_impulse(Vector2(1,1), Vector2(self.global_position - posicao_empurrao) * 20) #= self.global_position - posicao_empurrao
+		self.apply_impulse(Vector2(1,1), direcao_empurrao / 4) #= self.global_position - posicao_empurrao
 
 
-func _dano():
+func _explode():
 	if (pode_destruir):
 		self.queue_free()

@@ -24,7 +24,7 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="TimerAcabar" type="Timer" parent="." index="3"]
-wait_time = 1.5
+wait_time = 0.5
 autostart = true
 
 [node name="VisibilityNotifier2D" parent="." index="4"]
