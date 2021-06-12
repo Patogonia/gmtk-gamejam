@@ -6,4 +6,3 @@ func abrir():
 	aberta = true
 	$AnimatedSprite.play("Aberta")
 	$CollisionShape2D.disabled = true
-	print("porta aberta")

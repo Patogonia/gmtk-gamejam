@@ -17,8 +17,13 @@ func _ready():
 func _process(delta) -> void:
 	if (Input.is_action_just_pressed("interacao") and pode_pressionar and not ligado):
 		ligado = true
+		$AnimatedSprite.play("On")
 		emit_signal("alavanca_pressionada")
-		print("signal emitted")
+		$Seta.look_at(porta.position)
+		$Seta.modulate = Color("#00ffffff")
+		$Seta.visible = true
+		$Seta/Tween.interpolate_property($Seta,"modulate",$Seta.modulate,Color("#ffffffff"),0.7,Tween.TRANS_LINEAR)
+		$Seta/Tween.start()
 
 
 func _on_Area2D_body_entered(body):
