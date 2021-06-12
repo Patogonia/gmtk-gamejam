@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://personagem/Jogador.gd" type="Script" id=1]
+[ext_resource path="res://personagem/Personagem.tscn" type="PackedScene" id=2]
+
+[node name="Jogador" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+vel_maximo = 100.0
+rapidez = 10.0
+forca_pulo = 200
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+offset = Vector2( 0, -200 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 10.0
