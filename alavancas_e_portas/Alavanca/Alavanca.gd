@@ -10,10 +10,15 @@ export var porta_path: NodePath
 onready var porta: Node2D = get_node(porta_path)
 
 
+func _ready():
+	connect("alavanca_pressionada",porta,"abrir")
+
+
 func _process(delta) -> void:
 	if (Input.is_action_just_pressed("interacao") and pode_pressionar and not ligado):
 		ligado = true
 		emit_signal("alavanca_pressionada")
+		print("signal emitted")
 
 
 func _on_Area2D_body_entered(body):
