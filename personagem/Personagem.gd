@@ -51,8 +51,8 @@ func reproduzir_animacoes() -> void:
 		sprite_animado.flip_h = false
 
 
-func atirar(direcao: Vector2) -> void:
+func atirar(direcao: Vector2, player: bool = false) -> void:
 	if projetil != null:
 		var proj := projetil.instance()
-		proj.iniciar(direcao, position)
 		get_parent().add_child(proj)
+		proj.iniciar(direcao, position, player)
