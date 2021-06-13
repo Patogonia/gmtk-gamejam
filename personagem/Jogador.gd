@@ -1,15 +1,32 @@
+class_name Jogador
 extends Personagem
 
 onready var delay_atirar: Timer = $DelayAtirar
+onready var camera: Camera2D = $Camera2D
+onready var delay_pular: Timer = $DelayPular
+export var principal := false
+export var e_vida_extra := false
+export var grupo_spawn := "nenhum"
 
-var esta_sendo_controlado := true
+var distancia_teleporte := 32.0
+var delay_pular_por_ordem := 0.1
+
+
+func _ready():
+	if principal:
+		GerenciadorAliados.aliado_sendo_controlado = self
+		$Camera2D.current = true
+
+	GerenciadorAliados.grupo_aliados.append(self)
+
 
 func _process(_delta: float) -> void:
-	if esta_sendo_controlado:
+	if esta_sendo_controlado():
 		processar_input_movimentacao()
 		processar_input_atirar()
-	else: # Esse jogador nao esta sendo controlado, seguir o que esta sendo
-		pass
+		return
+
+	processar_movimento_bot()
 
 
 func processar_input_movimentacao() -> void:
@@ -17,6 +34,59 @@ func processar_input_movimentacao() -> void:
 
 
 func processar_input_atirar() -> void:
-	if Input.is_action_pressed("atirar") and delay_atirar.is_stopped():
+	if Input.is_action_pressed("atirar") and delay_atirar.is_stopped() and esta_sendo_controlado():
 		atirar(get_local_mouse_position().normalized(), true)
 		delay_atirar.start()
+
+
+func processar_movimento_bot() -> void:
+	var jogador = GerenciadorAliados.aliado_sendo_controlado
+	if position.distance_to(jogador.position) > GerenciadorAliados.pegar_distancia_parar(self) + distancia_teleporte:
+		position = jogador.position
+
+	var dir_horizontal: Vector2 = ((jogador.position - position) * Vector2.RIGHT).normalized()
+	dir *= Vector2.UP
+
+	if position.distance_to(jogador.position) > GerenciadorAliados.pegar_distancia_parar(self):
+		dir += dir_horizontal
+
+	if delay_pular.is_stopped() and jogador.dir.y > 0:
+		delay_pular.start(delay_pular_por_ordem * pegar_ordem())
+	elif jogador.dir.y < 1:
+		dir.y = 0
+
+
+func esta_sendo_controlado() -> bool:
+	return GerenciadorAliados.aliado_sendo_controlado == self
+
+
+func morrer():
+	if !e_vida_extra:
+		var vida_extra = GerenciadorAliados.pegar_vida_extra()
+		if vida_extra:
+			vida_extra.morrer()
+			return
+
+	if principal:
+		if GerenciadorAliados.grupo_aliados.size() == 1:
+			return # morrer
+
+		for aliado in GerenciadorAliados.grupo_aliados:
+			if aliado != self:
+				aliado.morrer()
+				return
+
+	if esta_sendo_controlado():
+		GerenciadorAliados.mudar_de_aliado()
+	GerenciadorAliados.grupo_aliados.erase(self)
+	for spawns in get_tree().get_nodes_in_group(grupo_spawn):
+		spawns.resgatado = false
+	queue_free()
+
+
+func pegar_ordem() -> int:
+	return GerenciadorAliados.pegar_ordem(self)
+
+
+func _on_DelayPular_timeout():
+	dir.y = 1

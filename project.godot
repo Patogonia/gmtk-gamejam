@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Personagem",
+"class": "Jogador",
+"language": "GDScript",
+"path": "res://personagem/Jogador.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Personagem",
 "language": "GDScript",
 "path": "res://personagem/Personagem.gd"
 } ]
 _global_script_class_icons={
+"Jogador": "",
 "Personagem": ""
 }
 
@@ -23,6 +29,10 @@ _global_script_class_icons={
 config/name="Gmtk-gamejam"
 run/main_scene="res://Jogo.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GerenciadorAliados="*res://GerenciadorAliados.gd"
 
 [input]
 
@@ -44,6 +54,11 @@ pular={
 atirar={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+mudar_aliado={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"unicode":0,"echo":false,"script":null)
  ]
 }
 

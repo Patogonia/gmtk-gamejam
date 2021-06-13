@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://personagem/Jogador.gd" type="Script" id=1]
 [ext_resource path="res://personagem/Personagem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Projeteis/Projetil.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.5, 3 )
 
 [node name="Jogador" instance=ExtResource( 2 )]
+collision_mask = 2
 script = ExtResource( 1 )
 vel_maximo = 100.0
 rapidez = 10.0
-forca_pulo = 250
+forca_pulo = 200
+projetil = ExtResource( 3 )
+principal = true
 
 [node name="AnimatedSprite" parent="." index="0"]
 animation = "Parado"
@@ -21,7 +25,6 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 offset = Vector2( 0, -30 )
-current = true
 zoom = Vector2( 0.15, 0.15 )
 smoothing_enabled = true
 smoothing_speed = 30.0
@@ -29,3 +32,8 @@ smoothing_speed = 30.0
 [node name="DelayAtirar" type="Timer" parent="." index="3"]
 wait_time = 0.2
 one_shot = true
+
+[node name="DelayPular" type="Timer" parent="." index="4"]
+one_shot = true
+
+[connection signal="timeout" from="DelayPular" to="." method="_on_DelayPular_timeout"]
