@@ -1,9 +1,10 @@
 extends "res://Projeteis/Projetil.gd"
 
+var forca = 50
+
 func _ready():
 	velocidade = 40
 	dano = 0
-	$Alvo.global_position = get_global_mouse_position()
 
 
 func _on_TimerAcabar_timeout():
@@ -12,4 +13,4 @@ func _on_TimerAcabar_timeout():
 
 func _on_Area2D_body_entered(body):
 	if (body.has_method("_empurrao")):
-		body._empurrao($Alvo.global_position)
+		body._empurrao((body.position - position).normalized(), forca)
