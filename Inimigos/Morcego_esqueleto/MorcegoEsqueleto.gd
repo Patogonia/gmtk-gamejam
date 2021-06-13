@@ -24,4 +24,4 @@ func _on_AtaqueTimer_timeout():
 func atirar():
 	var projetil = PROJETIL.instance()
 	get_parent().add_child(projetil)
-	projetil.iniciar(self.position - Vector2(0,-30), self.position)
+	projetil.iniciar(self.global_position + Vector2(0,30), self.global_position)

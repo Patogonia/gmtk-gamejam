@@ -7,8 +7,12 @@ var atirado_player: bool = false
 
 
 func iniciar(proj_direcao, proj_posicao, player = false):
-	self.look_at(proj_direcao)
-	self.position = proj_posicao + Vector2(0, -2)
+	if (player):
+		self.look_at(proj_direcao)
+		self.position = proj_posicao + Vector2(0, -2 if player else 0)
+	else:
+		self.position = proj_posicao + Vector2(0, -2 if player else 0)
+		self.look_at(proj_direcao)
 	atirado_player = player
 	self.set_collision_layer_bit(2, atirado_player)
 	self.set_collision_mask_bit(1, atirado_player)
