@@ -14,7 +14,7 @@ func _ready():
 
 
 func _on_Explosao_body_entered(body):
-	if (body.has_method("_dano")):
-		body._dano(1)
+	if (body.has_method("dano")):
+		body.dano(1)
 	if (body.has_method("_explode")):
 		body._explode()
