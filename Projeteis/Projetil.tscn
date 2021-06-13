@@ -1,149 +1,97 @@
-<<<<<<< HEAD
-[gd_scene load_steps=11 format=2]
-
-[ext_resource path="res://Projeteis/projetiljogad.png" type="Texture" id=1]
-=======
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Projeteis/Projetil_aprendiz_feiticeiro.png" type="Texture" id=1]
->>>>>>> 79ece94... Aprendiz de feiticeiro e sprites de alguns projeteis
 [ext_resource path="res://Projeteis/Projetil.gd" type="Script" id=2]
 [ext_resource path="res://Projeteis/Projetil_aliado.png" type="Texture" id=3]
 
-<<<<<<< HEAD
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 8, 8 )
+
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 8, 8 )
+region = Rect2( 8, 0, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 8, 0, 8, 8 )
+region = Rect2( 16, 0, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 8, 8 )
+region = Rect2( 24, 0, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 0, 8, 8 )
+region = Rect2( 32, 0, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
 region = Rect2( 40, 0, 8, 8 )
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
-=======
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 8, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 24, 0, 8, 8 )
-
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 40, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
 region = Rect2( 48, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
 region = Rect2( 56, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
 region = Rect2( 8, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
 region = Rect2( 24, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
 region = Rect2( 40, 0, 8, 8 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "defaultFeiticeiro",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
->>>>>>> 79ece94... Aprendiz de feiticeiro e sprites de alguns projeteis
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "defaultAliado",
 "speed": 10.0
 } ]
 
-<<<<<<< HEAD
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 4, 4 )
-=======
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 3, 3 )
->>>>>>> 79ece94... Aprendiz de feiticeiro e sprites de alguns projeteis
 
 [node name="Projetil" type="KinematicBody2D"]
 collision_layer = 0
-collision_mask = 5128
+collision_mask = 5144
 collision/safe_margin = 1.0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-<<<<<<< HEAD
-frames = SubResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 8 )
-disabled = true
-
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-rect = Rect2( -4, -4, 8, 8 )
-=======
-frames = SubResource( 11 )
+frames = SubResource( 15 )
 animation = "defaultAliado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 12 )
+shape = SubResource( 16 )
 disabled = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 scale = Vector2( 0.4, 0.196063 )
 rect = Rect2( -7.5, -15.5, 15, 31 )
->>>>>>> 79ece94... Aprendiz de feiticeiro e sprites de alguns projeteis
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

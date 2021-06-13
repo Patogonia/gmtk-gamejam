@@ -12,6 +12,6 @@ func _on_TimerAcabar_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	posicao_alvo = $RayCast2D.get_collision_point()
+	#posicao_alvo = $RayCast2D.get_collision_point()
 	if (body.has_method("_empurrao")):
 		body._empurrao((body.position - position).normalized(), forca)
