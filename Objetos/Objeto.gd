@@ -12,10 +12,10 @@ func _ready():
 		self.set_collision_layer_bit(14,true)
 	else:
 		self.mode = RigidBody2D.MODE_STATIC
-	
+
 	if (pode_destruir):
 		self.set_collision_layer_bit(13, true)
-	
+
 	if (colide):
 		self.set_collision_layer_bit(12, true)
 		self.set_collision_mask_bit(0, true)
