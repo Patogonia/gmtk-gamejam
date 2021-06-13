@@ -17,8 +17,9 @@ func _process(delta):
 func dano(dano_tomado):
 	if ((not imune or dano_tomado >= 100) and vida > 0):
 		vida -= dano_tomado
-		$Tween.interpolate_property(self, "modulate", Color("#ffff4040"), Color("#ffffffff"), 0.2, Tween.TRANS_LINEAR)
-		$Tween.start()
+		if (dano_tomado > 0):
+			$Tween.interpolate_property(self, "modulate", Color("#ffff4040"), Color("#ffffffff"), 0.2, Tween.TRANS_LINEAR)
+			$Tween.start()
 		if (vida <= 0):
 			vivo = false
 			$Tween.stop_all()

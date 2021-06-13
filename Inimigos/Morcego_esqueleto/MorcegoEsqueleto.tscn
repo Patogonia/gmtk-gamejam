@@ -36,12 +36,12 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-scale = Vector2( 1, 1 )
 frames = SubResource( 6 )
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="3"]
 enabled = true
 cast_to = Vector2( 8, 0 )
+collision_mask = 5120
 
 [node name="AtaqueTimer" type="Timer" parent="." index="4"]
 autostart = true

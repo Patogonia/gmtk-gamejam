@@ -6,7 +6,7 @@ var dano: int = 1
 var atirado_player: bool = false setget _set_atirado_player
 
 
-func iniciar(proj_direcao, proj_posicao, player = false):
+func iniciar(proj_direcao, proj_posicao, player = false, projetil = false):
 	if (player):
 		self.look_at(proj_direcao)
 		self.position = proj_posicao + Vector2(0, -2 if player else 0)
@@ -14,8 +14,12 @@ func iniciar(proj_direcao, proj_posicao, player = false):
 		self.position = proj_posicao + Vector2(0, -2 if player else 0)
 		self.look_at(proj_direcao)
 	_set_atirado_player(player)
-	$CollisionShape2D.disabled = false
-	$AnimatedSprite.play("default")
+	if (not "EmpurraoArcano" in self.name):
+		$CollisionShape2D.disabled = false
+	if (not projetil):
+		$AnimatedSprite.play("default")
+	else:
+		$AnimatedSprite.play("defaultAliado" if player else "defaultFeiticeiro")
 
 
 func _set_atirado_player(new_state):
