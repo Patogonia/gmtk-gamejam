@@ -33,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GerenciadorAliados="*res://GerenciadorAliados.gd"
+
 [importer_defaults]
 
 texture={
@@ -90,20 +91,16 @@ mudar_aliado={
 2d_physics/layer_2="Inimigos"
 2d_physics/layer_3="Projeteis"
 2d_physics/layer_4="Empurrao_arcano"
+2d_physics/layer_11="Alavancas"
+2d_physics/layer_12="Portas"
 2d_physics/layer_13="Objeto_colisao"
 2d_physics/layer_14="Objeto_destrutivel"
 2d_physics/layer_15="Objeto_empurravel"
-
 interacao={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
-
-[layer_names]
-
-2d_physics/layer_11="Alavancas"
-2d_physics/layer_12="Portas"
 
 [physics]
 
