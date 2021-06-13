@@ -6,7 +6,7 @@ var dano: int = 1
 var atirado_player: bool = false
 
 
-func iniciar(proj_direcao, proj_posicao, player):
+func iniciar(proj_direcao, proj_posicao, player = false):
 	self.look_at(proj_direcao)
 	self.position = proj_posicao + Vector2(0, -2)
 	atirado_player = player

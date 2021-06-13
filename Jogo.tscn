@@ -64,3 +64,5 @@ mass = 1.0
 
 [node name="Pedra_destrutivel" parent="." instance=ExtResource( 5 )]
 position = Vector2( 71.252, 127.864 )
+[node name="MorcegoEsqueleto" parent="." instance=ExtResource( 4 )]
+position = Vector2( 120, 104 )
