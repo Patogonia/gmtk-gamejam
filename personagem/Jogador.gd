@@ -6,7 +6,7 @@ onready var camera: Camera2D = $Camera2D
 onready var delay_pular: Timer = $DelayPular
 export var principal := false
 export var e_vida_extra := false
-
+export var grupo_spawn := "nenhum"
 
 var distancia_teleporte := 32.0
 var delay_pular_por_ordem := 0.1
@@ -42,7 +42,7 @@ func processar_input_atirar() -> void:
 func processar_movimento_bot() -> void:
 	var jogador = GerenciadorAliados.aliado_sendo_controlado
 	if position.distance_to(jogador.position) > GerenciadorAliados.pegar_distancia_parar(self) + distancia_teleporte:
-		return # teleportar
+		position = jogador.position
 
 	var dir_horizontal: Vector2 = ((jogador.position - position) * Vector2.RIGHT).normalized()
 	dir *= Vector2.UP
@@ -61,23 +61,26 @@ func esta_sendo_controlado() -> bool:
 
 
 func morrer():
-	if principal:
-		if GerenciadorAliados.grupo_aliados.size() == 1:
-			return # morrer
-
-		for aliado in GerenciadorAliados.grupo_aliados:
-			if aliado != self:
-				return # matar o aliado
-
 	if !e_vida_extra:
 		var vida_extra = GerenciadorAliados.pegar_vida_extra()
 		if vida_extra:
 			vida_extra.morrer()
 			return
 
+	if principal:
+		if GerenciadorAliados.grupo_aliados.size() == 1:
+			return # morrer
+
+		for aliado in GerenciadorAliados.grupo_aliados:
+			if aliado != self:
+				aliado.morrer()
+				return
+
 	if esta_sendo_controlado():
 		GerenciadorAliados.mudar_de_aliado()
 	GerenciadorAliados.grupo_aliados.erase(self)
+	for spawns in get_tree().get_nodes_in_group(grupo_spawn):
+		spawns.resgatado = false
 	queue_free()
 
 

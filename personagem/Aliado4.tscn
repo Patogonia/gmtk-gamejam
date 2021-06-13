@@ -13,11 +13,11 @@ region = Rect2( 0, 16, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 8, 8, 8 )
+region = Rect2( 0, 16, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 16, 8, 8 )
+region = Rect2( 16, 8, 8, 8 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -28,12 +28,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "Parado",
+"name": "Caindo",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "Caindo",
+"name": "Parado",
 "speed": 5.0
 } ]
 
@@ -41,6 +41,7 @@ animations = [ {
 projetil = null
 principal = false
 e_vida_extra = true
+grupo_spawn = "spawn_aliado4"
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 5 )
