@@ -11,7 +11,7 @@
 [ext_resource path="res://Mapa.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objetos/Pedra_movivel/Pedra_movivel_media.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objetos/Pedra_movivel/Pedra_movivel_grande.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Projeteis/Empurrao_arcano/EmpurraoArcano.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Lava/Lava.tscn" type="PackedScene" id=12]
 [ext_resource path="res://alavancas_e_portas/Alavanca/Alavanca.tscn" type="PackedScene" id=13]
 [ext_resource path="res://alavancas_e_portas/Porta/Porta.tscn" type="PackedScene" id=14]
 
@@ -302,7 +302,92 @@ position = Vector2( 216, -84 )
 sprite_frames = SubResource( 12 )
 aliado = ExtResource( 7 )
 
+[node name="Lava2" type="Node" parent="."]
+
+[node name="Lava" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 460, -436 )
+
+[node name="Lava2" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 452, -436 )
+
+[node name="Lava3" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 444, -436 )
+
+[node name="Lava4" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 436, -436 )
+
+[node name="Lava5" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 428, -436 )
+
+[node name="Lava6" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 420, -436 )
+
+[node name="Lava7" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 412, -436 )
+
+[node name="Lava8" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 404, -436 )
+
+[node name="Lava9" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 396, -436 )
+
+[node name="Lava10" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 388, -436 )
+
+[node name="Lava11" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 380, -436 )
+
+[node name="Lava12" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 372, -436 )
+
+[node name="Lava13" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 364, -436 )
+
+[node name="Lava14" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 356, -436 )
+
+[node name="Lava15" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 348, -436 )
+
+[node name="Lava16" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 340, -436 )
+
+[node name="Lava17" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 332, -436 )
+
+[node name="Lava18" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 324, -436 )
+
+[node name="Lava19" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 316, -436 )
+
+[node name="Lava20" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 308, -436 )
+
+[node name="Lava21" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 300, -436 )
+
+[node name="Lava22" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 292, -436 )
+
+[node name="Lava23" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 284, -436 )
+
+[node name="Lava24" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 276, -436 )
+
+[node name="Lava25" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 268, -436 )
+
+[node name="Lava26" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 260, -436 )
+
+[node name="Lava27" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 252, -436 )
+
+[node name="Lava28" parent="Lava2" instance=ExtResource( 12 )]
+position = Vector2( 244, -436 )
+
 [node name="Jogador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 163, 147 )
+position = Vector2( 486, -452 )
 z_index = 1
-projetil = ExtResource( 12 )

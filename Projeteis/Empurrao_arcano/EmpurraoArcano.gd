@@ -1,6 +1,6 @@
 extends "res://Projeteis/Projetil.gd"
 
-var forca = 50
+var forca = 200
 
 func _ready():
 	velocidade = 40

@@ -2,6 +2,7 @@ extends Area2D
 
 func _ready():
 	var tamanho = self.scale
+	$AnimatedSprite.play("default")
 	$Tween.interpolate_property(self, "scale", tamanho, tamanho * 1.7, 0.1, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
