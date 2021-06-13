@@ -12,7 +12,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 8 )
+extents = Vector2( 4, 4 )
 
 [node name="Inimigo" type="KinematicBody2D"]
 collision_layer = 2

@@ -5,6 +5,10 @@ var vivo: bool = true
 var imune: bool = false
 
 
+func _ready():
+	$AnimatedSprite.play("default")
+
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		dano(1)
