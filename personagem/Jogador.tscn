@@ -8,11 +8,11 @@
 extents = Vector2( 3.5, 3 )
 
 [node name="Jogador" instance=ExtResource( 2 )]
-collision_mask = 2
+collision_mask = 18
 script = ExtResource( 1 )
 vel_maximo = 100.0
 rapidez = 10.0
-forca_pulo = 200
+forca_pulo = 250
 projetil = ExtResource( 3 )
 principal = true
 
