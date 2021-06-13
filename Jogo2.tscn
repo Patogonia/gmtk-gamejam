@@ -90,122 +90,98 @@ tile_data = PoolIntArray( -6881228, 1, 0, -6881227, 1, 0, -6881226, 1, 0, -68812
 
 [node name="Pedra_destrutivel" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 844, 132 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel2" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 844, 140 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel3" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 844, 148 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel4" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 428, -76 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel5" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 428, -68 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel6" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 852, 20 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel7" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 852, 28 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel8" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 852, 36 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel14" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 956, -148 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel15" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 956, -140 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel16" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 956, -132 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel17" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 988, -180 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel18" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 988, -172 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel19" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 988, -164 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel20" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 524, -524 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel21" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 524, -516 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel22" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 340, -524 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel24" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 340, -532 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel23" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 340, -516 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel9" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 756, 20 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel10" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 756, 28 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel12" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 756, 4 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel13" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 756, 12 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="Pedra_destrutivel11" parent="PedrasDestrutiveis" instance=ExtResource( 4 )]
 position = Vector2( 756, 36 )
-collision_layer = 0
 collision_mask = 0
 
 [node name="PedrasMoviveis" type="Node" parent="."]
