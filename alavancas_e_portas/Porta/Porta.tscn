@@ -28,7 +28,8 @@ animations = [ {
 } ]
 
 [node name="Porta" type="StaticBody2D"]
-collision_layer = 2048
+collision_layer = 1540
+collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

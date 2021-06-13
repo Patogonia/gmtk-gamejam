@@ -33,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GerenciadorAliados="*res://GerenciadorAliados.gd"
+GlobalVariables="*res://GlobalVariables.gd"
 
 [importer_defaults]
 
@@ -96,8 +97,9 @@ interacao={
 2d_physics/layer_2="Inimigos"
 2d_physics/layer_3="Projeteis"
 2d_physics/layer_4="Empurrao_arcano"
-2d_physics/layer_11="Alavancas"
-2d_physics/layer_12="Portas"
+2d_physics/layer_9="Alavancas"
+2d_physics/layer_10="Portas"
+2d_physics/layer_11="Parede_chao"
 2d_physics/layer_13="Objeto_colisao"
 2d_physics/layer_14="Objeto_destrutivel"
 2d_physics/layer_15="Objeto_empurravel"

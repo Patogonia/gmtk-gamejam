@@ -55,4 +55,4 @@ func atirar(direcao: Vector2, player: bool = false) -> void:
 	if projetil != null:
 		var proj := projetil.instance()
 		get_parent().add_child(proj)
-		proj.iniciar(direcao, position, player)
+		proj.iniciar(direcao, position, player, true)
