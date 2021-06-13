@@ -8,18 +8,19 @@ var atirado_player: bool = false
 
 func iniciar(proj_direcao, proj_posicao, player):
 	self.look_at(proj_direcao)
-	self.position = proj_posicao
+	self.position = proj_posicao + Vector2(0, -2)
 	atirado_player = player
-	if (atirado_player):
-		self.set_collision_layer_bit(6, true)
-		self.set_collision_mask_bit(2, true)
+	self.set_collision_layer_bit(2, atirado_player)
+	self.set_collision_mask_bit(1, atirado_player)
+	self.set_collision_mask_bit(0, not atirado_player)
+	$CollisionShape2D.disabled = false
 
 
 func _physics_process(delta) -> void:
 	direcao *= transform.x
 	direcao *= velocidade
 	
-	var colisor = move_and_collide(direcao*delta)
+	var colisor = move_and_collide(direcao*delta, false)
 	if (is_instance_valid(colisor)):
 		_colidir(colisor)
 	direcao = Vector2(1,1)
@@ -29,7 +30,8 @@ func _colidir(colidiu_com):
 	if (colidiu_com.has_method("_dano")):
 		colidiu_com._dano(dano)
 	trata_colisao(colidiu_com)
-	self.queue_free()
+	if (not "EmpurraoArcano" in self.name):
+		self.queue_free()
 
 
 func _empurrao(alvo_empurrao: Vector2):

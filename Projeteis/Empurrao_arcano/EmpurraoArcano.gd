@@ -1,7 +1,7 @@
 extends "res://Projeteis/Projetil.gd"
 
 func _ready():
-	velocidade = 4
+	velocidade = 40
 	dano = 0
 	$Alvo.global_position = get_global_mouse_position()
 

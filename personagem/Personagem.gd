@@ -34,7 +34,7 @@ func mover_personagem(delta: float) -> void:
 		if dir.y > 0:
 			vel_vertical.y -= forca_pulo
 
-	_velocidade = move_and_slide(vel_horizontal + vel_vertical, Vector2.UP)
+	_velocidade = move_and_slide(vel_horizontal + vel_vertical, Vector2.UP, false, 4, 0.785398, false)
 
 
 func reproduzir_animacoes() -> void:

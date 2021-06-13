@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Objetos/Objeto.tscn" type="PackedScene" id=1]
+
+[node name="Pedra_movivel" instance=ExtResource( 1 )]
+pode_mover = true
+colide = true
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 0.945098, 1, 0, 1 )
