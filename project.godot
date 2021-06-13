@@ -26,8 +26,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Gmtk-gamejam"
-run/main_scene="res://Jogo.tscn"
+config/name="Mage Squad"
+run/main_scene="res://Jogo2.tscn"
 config/icon="res://icon.png"
 
 [autoload]

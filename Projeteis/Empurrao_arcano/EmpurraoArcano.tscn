@@ -1,38 +1,73 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Projeteis/Projetil.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Projeteis/Empurrao_arcano/EmpurraoArcano.gd" type="Script" id=2]
+[ext_resource path="res://Projeteis/Empurrao_arcano/empurrao.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 8 )
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4, 8 )
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 8, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 24, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 40, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 56, 0, 8, 8 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 4, 4 )
 
 [node name="EmpurraoArcano" instance=ExtResource( 1 )]
 collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-scale = Vector2( 0.125, 0.25 )
+frames = SubResource( 9 )
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D" parent="." index="2"]
-shape = SubResource( 2 )
+shape = SubResource( 11 )
 
 [node name="TimerAcabar" type="Timer" parent="." index="3"]
 wait_time = 0.5
 autostart = true
-
-[node name="VisibilityNotifier2D" parent="." index="4"]
-scale = Vector2( 1, 1 )
-rect = Rect2( -4, -8, 8, 16 )
-
-[node name="Alvo" type="Position2D" parent="." index="5"]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="TimerAcabar" to="." method="_on_TimerAcabar_timeout"]

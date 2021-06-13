@@ -21,9 +21,13 @@ func _ready():
 		self.set_collision_mask_bit(0, true)
 
 
-func _empurrao(direcao_empurrao):
+func _integrate_forces(state):
+	angular_velocity = 0
+
+
+func _empurrao(direcao_empurrao, forca):
 	if (pode_mover):
-		self.apply_impulse(Vector2(1,1), direcao_empurrao / 4) #= self.global_position - posicao_empurrao
+		self.apply_impulse(Vector2(1,1), direcao_empurrao * forca) #= self.global_position - posicao_empurrao
 
 
 func _explode():
