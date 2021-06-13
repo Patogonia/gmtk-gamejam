@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://cenario/lavaparedefundoparedeqbloco-export.png" type="Texture" id=1]
 [ext_resource path="res://personagem/Jogador.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Objetos/Porta_destrutivel/Porta_destrutivel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Inimigos/Morcego_esqueleto/MorcegoEsqueleto.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Inimigos/Aprendiz_feiticeiro/AprendizFeiticeiro.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Projeteis/Bola_de_fogo/BolaDeFogo.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
@@ -61,7 +60,6 @@ tile_data = PoolIntArray( 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0
 
 [node name="Jogador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 154.48, 142.68 )
-projetil = ExtResource( 8 )
 
 [node name="Pedra_movivel" parent="." instance=ExtResource( 4 )]
 position = Vector2( 200, 136 )

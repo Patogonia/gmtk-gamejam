@@ -14,6 +14,11 @@ func _process(delta):
 		dano(1)
 
 
+func _empurrao(direcao_empurrao):
+	$Tween.interpolate_property(self, "position", self.global_position, self.global_position - Vector2(5 if self.position < direcao_empurrao else -5, 0), 0.3, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	$Tween.start()
+
+
 func dano(dano_tomado):
 	if ((not imune or dano_tomado >= 100) and vida > 0):
 		vida -= dano_tomado
